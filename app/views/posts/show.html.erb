@@ -2,6 +2,7 @@
 <p><%= @post.content%></p>
 
 <%= link_to "New Comment", new_post_comments_path(@post)%>
+<p>Total comments:<%= @post.comments.count%></p>
 
 <table>
   <% @post.comments.each do |c|%>

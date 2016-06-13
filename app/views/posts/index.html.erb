@@ -1,11 +1,25 @@
 <h1>Forum</h1>
 
+
 <%= link_to "New Post", new_post_path %>
+
+<%# link_to 'Sort by lastest comments', post_comments_path( :order => "created_at") %>
+<%# link_to 'Sort by Default', events_path %>
+
 
 <table>
   <% @posts.each do |post|%>
   <tr>
+    <br/>
     <td><%= link_to post.title, post_path(post) %></td>
+    <td><%= post.comments.count %></td>
+    <td>
+      <% if post.comments.count > 0 %>
+      <%= post.comments.last.updated_at %>
+      <% else %>
+
+      <% end %>
+      </td>
     <td><%= link_to "Edit", edit_post_path(post)%></td>
     <td><%= link_to "Delete", post_path(post), :method => :delete, :data => {:confirm => "Are you sure?"} %></td>
   </tr>
