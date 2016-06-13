@@ -1,0 +1,21 @@
+<p>Title: <%= @post.title%></p>
+<p><%= @post.content%></p>
+
+<%= link_to "New Comment", new_post_comments_path(@post)%>
+
+<table>
+  <% @post.comments.each do |c|%>
+    <tr>
+
+      <td><%= c.content %></td>
+
+    </tr>
+  <%end%>
+</table>
+
+
+
+
+
+<%= link_to "Back to Index", posts_path %>
+
