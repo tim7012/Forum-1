@@ -1,11 +1,11 @@
 <p>Title: <%= @post.title%></p>
 <p><%= @post.content%></p>
 
-<ul>Category:
-  <% @post.category.each do |g| %>
-    <li><%= g.name %></li>
+<p>Category:
+  <% @post.categorys.each do |g| %>
+    <%= g.name %>
   <% end %>
-</ul>
+</p>
 
 <%= link_to "New Comment", new_post_comments_path(@post)%>
 <p>Total comments:<%= @post.comments.count%></p>
