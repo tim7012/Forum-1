@@ -10,6 +10,9 @@
     <%= link_to('註冊', new_registration_path(:user)) %> |
     <%= link_to('登入', new_session_path(:user)) %>
   <% end %>
+  <br><br><br>
+  <%= link_to "About", about_posts_path %>
+  <br><br>
 
   <title>Demo</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>

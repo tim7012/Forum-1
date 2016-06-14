@@ -9,7 +9,8 @@ before_action :set_post
 
 
   def new
-    @comment = @post.comments.new
+    @comment = @post.comments.build
+
   end
 
   def edit
@@ -17,7 +18,7 @@ before_action :set_post
   end
 
   def create
-    @comment = @post.comments.new(comment_params)
+    @comment = @post.comments.build(comment_params)
     if @comment.save
       redirect_to post_path(@post)
     else

@@ -45,6 +45,12 @@ class PostsController < ApplicationController
     flash[:alert] = "The post was successfully deleted"
   end
 
+  def about
+    @users = User.all
+    @posts = Post.all
+    @comments = Comment.all
+  end
+
   private
 
   def set_post
