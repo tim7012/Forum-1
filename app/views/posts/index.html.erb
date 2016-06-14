@@ -10,8 +10,7 @@
 <table>
   <% @posts.each do |post|%>
   <tr>
-    <br/>
-    <td><%= link_to post.title, post_path(post) %></td>
+    <td><%= link_to post.title, post_path(post)%></td>
     <td><%= post.comments.count %></td>
     <td>
       <% if post.comments.count > 0 %>
@@ -20,8 +19,8 @@
 
       <% end %>
       </td>
-    <td><%= link_to "Edit", edit_post_path(post)%></td>
-    <td><%= link_to "Delete", post_path(post), :method => :delete, :data => {:confirm => "Are you sure?"} %></td>
+    <td><%= link_to "Edit", edit_post_path(post), :class => "btn btn-primary"%></td>
+    <td><%= link_to "Delete", post_path(post), :method => :delete, :class => "btn btn-danger", :data => {:confirm => "Are you sure?"} %></td>
   </tr>
   <% end %>
 </table>
